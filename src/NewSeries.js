@@ -6,6 +6,7 @@ const statuses = {
     'watching': 'Assitindo',
     'toWatch': "Assistir"
 }
+
 class NewSeries extends Component{
     constructor(props){
         super(props)
