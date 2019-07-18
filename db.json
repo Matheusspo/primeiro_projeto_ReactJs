@@ -44,6 +44,13 @@
       "genre": "Drama",
       "comment": "Olokinho meu",
       "id": 7
+    },
+    {
+      "name": "007",
+      "status": "watching",
+      "genre": "Ação",
+      "comment": "Bem top",
+      "id": 8
     }
   ],
   "genres": [

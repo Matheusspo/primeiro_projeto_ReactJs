@@ -21,7 +21,7 @@ class App extends Component {
             <div className="container">
               <div className="navbar-header page-scroll">
                 <a className="navbar-brand page-scroll" href="#page-top">
-                    <img src="images/logo.png" height="30" />
+                    <img src="/images/logo.png" height="30" />
                 </a>
               </div>
               <div className="collapse navbar-collapse navbar-ex1-collapse">
@@ -30,20 +30,19 @@ class App extends Component {
                     <Link to='/'>Home</Link>                   
                   </li>
                   <li>
-                    <Link to='/about'>Sobre</Link>
-                  </li>
-                  <li>
                     <Link to='/new'>Nova série</Link>
                   </li>
+                  <li>
+                    <Link to='/about'>Sobre</Link>
+                  </li>                  
                 </ul>
               </div>
             </div>
            </nav> 
            <Route exact path='/' component={Home} />
-           <Route path='/series/:genres' component={Series}/>
-           <Route exact path='/about' component={About} />  
-           <Route exact path='/new' component={NewSeries} />                 
-          
+           <Route path='/series/:genre' component={Series}/>
+           <Route exact path='/new' component={NewSeries} />  
+           <Route exact path='/about' component={About} />                                     
         </div>
     </div>
       </Router>

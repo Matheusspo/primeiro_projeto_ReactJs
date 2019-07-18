@@ -1,6 +1,12 @@
 import React, {Component} from 'react'
 import api from './Api'
 
+const statuses = {
+    'watched': 'Assistido',
+    'watching': 'Assitindo',
+    'toWatch': "Assistir"
+}
+
 class Series extends Component{
     constructor(props){
         super(props)
@@ -9,17 +15,24 @@ class Series extends Component{
             isLoading: false,
             series: []
         }
+        this.renderSeries = this.renderSeries.bind(this)        
     }
     componentDidMount(){
         this.setState({isLoading: true})
-        api.loadSeriesByGenre(this.props.match.params.genre).then((res)=>{
+        api.loadSeriesByGenre(this.props.match.params.genre)
+        .then((res)=>{
             this.setState({
                 isLoading: false,
-                genre: res.data
+                series: res.data
             })
-        })
+        })                
     }
-
+    deleteSeries(id){
+        api.deleteSeries(id)
+            .then((res)=>
+            console.log(res)
+        )
+    }
     renderSeries(series){
         return(
             <div className="item  col-xs-4 col-lg-4">
@@ -27,14 +40,15 @@ class Series extends Component{
                 <img className="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
                 <div className="caption">
                     <h4 className="group inner list-group-item-heading">
-                    {series.name}}</h4>
+                    {series.name}</h4>
                     <div className="row">
-                    <div className="col-xs-12 col-md-6">
+                    <div className="col-xs-12 col-md-12">
                         <p className="lead">
-                        {series.genre}}</p>
+                        {series.genre} / {statuses[series.status]}</p>
                     </div>
-                    <div className="col-xs-12 col-md-6">
+                    <div className="col-xs-12 col-md-12">
                         <a className="btn btn-success" href="">Gerenciar</a>
+                        <a className="btn btn-success" onClick={()=> this.deleteSeries(series.id)}> Excluir</a>
                     </div>
                     </div>
                 </div>
