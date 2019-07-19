@@ -66,3 +66,34 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+-Instalando servidor nodeJs
+npm install -g json-server
+
+-Criando projeto em ReactJs
+npm install -g create-react-app
+
+-Biblioteca para ajudar a desenvolver em react
+npm install -g yarn
+
+-Criando nosso primeiro projeto
+create-react-app primeiro-projeto
+cd primeiro-projeto
+
+-Iniciando o servidor
+npm start / yarn start
+
+-Lendo um json
+json-server --watch db.json
+
+-Para especificar alguma porta pode ser escrito da seguinte maneira
+json-server --watch db.json --port 3001
+
+-Abrindo o VSCODE
+code ./
+
+-Adicionando um componente do react ao nosso projeto
+yarn add react-router-dom
+
+criar solução build
+yarn run build
